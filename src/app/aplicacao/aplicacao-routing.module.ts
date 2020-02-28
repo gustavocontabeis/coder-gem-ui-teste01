@@ -7,6 +7,7 @@ import { AplicacaoListComponent } from './aplicacao-list/aplicacao-list.componen
 
 const routes: Routes = [
   { path: 'aplicacao-add', component: AplicacaoAddComponent },
+  { path: 'aplicacao-add/:id', component: AplicacaoAddComponent },
   { path: 'aplicacao-filter', component: AplicacaoFilterComponent },
   { path: 'aplicacao-list', component: AplicacaoListComponent },
 ];

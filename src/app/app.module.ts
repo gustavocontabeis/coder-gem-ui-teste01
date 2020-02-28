@@ -1,27 +1,34 @@
-import { ButtonModule } from 'primeng/button';
-import { TableModule } from 'primeng/table';
-import { AplicacaoModule } from './aplicacao/aplicacao.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PanelModule } from 'primeng/panel';
+import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+
 import { MessageService, ConfirmationService } from 'primeng/api';
+import { PanelModule } from 'primeng/panel';
+import { ToastModule } from 'primeng/toast';
+import { TableModule } from 'primeng/table';
+import { ButtonModule } from 'primeng/button';
+
+import { AppComponent } from './app.component';
+import { AplicacaoModule } from './aplicacao/aplicacao.module';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './home/home.component';
+import { Erro404Component } from './erro404/erro404.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    Erro404Component
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    PanelModule, TableModule, ButtonModule,
+    ToastModule, PanelModule, TableModule, ButtonModule,
     AplicacaoModule
   ],
   providers: [MessageService, ConfirmationService ],
