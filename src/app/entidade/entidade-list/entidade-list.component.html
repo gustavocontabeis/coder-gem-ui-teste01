@@ -1,0 +1,23 @@
+<p-table [value]="entidades" [paginator]="true" [rows]="10">
+    <ng-template pTemplate="header">
+     <tr>
+      <th>Id</th>
+      <th>Aplicação</th>
+      <th>Nome</th>
+      <th>Rotulo</th>
+      <th>Tabela</th>
+      <th>&nbsp;</th>
+     </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-entidade>
+     <tr>
+      <td style="text-align: right;">{{entidade.id}}</td>
+      <td><a [routerLink]="['/aplicacao/aplicacao-add/', entidade.aplicacao.id]">{{entidade.aplicacao.nome}}</a></td>
+      <td>{{entidade.nome}}</td>
+      <td>{{entidade.rotulo}}</td>
+      <td>{{entidade.tabela}}</td>
+      <td><button pButton icon="pi pi-pencil" [routerLink]="['/entidade/entidade-add/', entidade.id]" title="Selecionar Entidade"></button><button pButton icon="pi pi-pencil" [routerLink]="['/atributos/entidade/', entidade.id]" title="Selecionar Atributos"></button></td>
+     </tr>
+    </ng-template>
+   </p-table>
+   

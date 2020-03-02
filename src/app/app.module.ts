@@ -12,6 +12,7 @@ import { ButtonModule } from 'primeng/button';
 
 import { AppComponent } from './app.component';
 import { AplicacaoModule } from './aplicacao/aplicacao.module';
+import { EntidadeModule } from './entidade/entidade.module';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { Erro404Component } from './erro404/erro404.component';
@@ -29,7 +30,7 @@ import { Erro404Component } from './erro404/erro404.component';
     HttpClientModule,
     BrowserAnimationsModule,
     ToastModule, PanelModule, TableModule, ButtonModule,
-    AplicacaoModule
+    AplicacaoModule, EntidadeModule
   ],
   providers: [MessageService, ConfirmationService ],
   bootstrap: [AppComponent]

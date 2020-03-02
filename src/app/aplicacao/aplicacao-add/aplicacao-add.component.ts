@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Aplicacao } from '../aplicacao';
 import { MessageService, ConfirmationService, SelectItem } from 'primeng/api';
 import { AplicacaoService } from '../aplicacao.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-aplicacao-add',
@@ -17,6 +18,8 @@ export class AplicacaoAddComponent implements OnInit {
   entidades: SelectItem[] = [];
 
   constructor(
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
     private messageService: MessageService,
     private confirmationService: ConfirmationService,
     private aplicacaoService: AplicacaoService) { }
@@ -27,6 +30,26 @@ export class AplicacaoAddComponent implements OnInit {
     this.consultar();
     this.aplicacao = new Aplicacao();
     this.entidades = [];
+    this.activatedRoute.params.subscribe(params => {
+      console.log('?1');
+      console.log(params);
+      const id = params.id ? Number(params.id) : null;
+      console.log(id);
+      if (id != null) {
+        console.log("contem id" + id);
+        this.buscar(id);
+      }
+    });
+
+  }
+
+  buscar(id: number) {
+    this.aplicacaoService.buscar(id).subscribe(resposta => {
+      this.aplicacao = resposta as Aplicacao;
+    }, error => {
+      console.log(error);
+      alert('erro entidades.' + error);
+    });
   }
 
   consultar() {

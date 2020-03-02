@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'erro404', component: Erro404Component },
   { path: 'aplicacao', loadChildren: './aplicacao/aplicacao.module#AplicacaoModule'},
+  { path: 'entidade', loadChildren: './entidade/entidade.module#EntidadeModule'},
   { path: '', redirectTo: 'erro404', pathMatch: 'full'},
 ];
 
