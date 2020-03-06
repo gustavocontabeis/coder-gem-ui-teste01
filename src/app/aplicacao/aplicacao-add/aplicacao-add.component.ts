@@ -79,6 +79,7 @@ export class AplicacaoAddComponent implements OnInit {
       this.exibirDialog = false;
       this.novoRegistro = false;
       this.messageService.add({severity: 'success', summary: 'OK', detail: 'Registro adicionado com sucesso.'});
+      this.router.navigate(['/aplicacao/aplicacao-list']);
       }, error => {
         console.log(error);
         alert(error.ok);
