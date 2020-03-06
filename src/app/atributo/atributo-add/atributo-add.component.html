@@ -1,0 +1,81 @@
+<form #atributoForm="ngForm" (ngSubmit)="onSubmit(atributoForm)">
+    <div class="ui-g ui-fluid" *ngIf="atributo">
+     <div class="ui-g-12">
+      <div class="ui-g-4 label">
+       <label id="label-id" for="id">Id</label>
+      </div>
+      <div class="ui-g-8 input">
+       <input id="id" name="id" #id="ngModel" pKeyFilter="int" placeholder="Id" [(ngModel)]="atributo.id" [required]="false" pattern="^\d+$">
+      </div>
+     </div>
+     <div class="ui-g-12">
+      <div class="ui-g-4 label">
+       <label id="label-entidade" for="entidade">Entidade</label>
+      </div>
+      <div class="ui-g-8 input">
+       <p-dropdown id="entidade" name="entidade" #entidade="ngModel" [options]="entidades" [(ngModel)]="atributo.entidade" [required]="false"></p-dropdown>
+      </div>
+     </div>
+     <div class="ui-g-12">
+      <div class="ui-g-4 label">
+       <label id="label-nome" for="nome">Nome</label>
+      </div>
+      <div class="ui-g-8 input">
+       <input id="nome" name="nome" #nome="ngModel" pInputText placeholder="Nome" [(ngModel)]="atributo.nome" [required]="true">
+      </div>
+     </div>
+     <div class="ui-g-12">
+      <div class="ui-g-4 label">
+       <label id="label-rotulo" for="rotulo">Rotulo</label>
+      </div>
+      <div class="ui-g-8 input">
+       <input id="rotulo" name="rotulo" #rotulo="ngModel" pInputText placeholder="Rotulo" [(ngModel)]="atributo.rotulo" [required]="true">
+      </div>
+     </div>
+     <div class="ui-g-12">
+      <div class="ui-g-4 label">
+       <label id="label-coluna" for="coluna">Coluna</label>
+      </div>
+      <div class="ui-g-8 input">
+       <input id="coluna" name="coluna" #coluna="ngModel" pInputText placeholder="Coluna" [(ngModel)]="atributo.coluna" [required]="true">
+      </div>
+     </div>
+     <div class="ui-g-12">
+      <div class="ui-g-4 label">
+       <label id="label-tipo" for="tipo">Tipo</label>
+      </div>
+      <div class="ui-g-8 input">
+       <p-dropdown id="tipo" name="tipo" #tipo="ngModel" [options]="tipos" [(ngModel)]="atributo.tipo" [required]="true"></p-dropdown>
+      </div>
+     </div>
+     <div class="ui-g-12">
+      <div class="ui-g-4 label">
+       <label id="label-obritatorio" for="obritatorio">Obritatorio</label>
+      </div>
+      <div class="ui-g-8 input">
+       <input id="obritatorio" name="obritatorio" #obritatorio="ngModel" binary="true" [(ngModel)]="atributo.obritatorio" [required]="true">
+      </div>
+     </div>
+     <div class="ui-g-12">
+      <div class="ui-g-4 label">
+       <label id="label-tamanhoMinimo" for="tamanhoMinimo">Tamanho minimo</label>
+      </div>
+      <div class="ui-g-8 input">
+       <input id="tamanhoMinimo" name="tamanhoMinimo" #tamanhoMinimo="ngModel" pKeyFilter="int" placeholder="Tamanho minimo" [(ngModel)]="atributo.tamanhoMinimo" [required]="false" pattern="^\d+$">
+      </div>
+     </div>
+     <div class="ui-g-12">
+      <div class="ui-g-4 label">
+       <label id="label-tamanhoMaximo" for="tamanhoMaximo">Tamanho maximo</label>
+      </div>
+      <div class="ui-g-8 input">
+       <input id="tamanhoMaximo" name="tamanhoMaximo" #tamanhoMaximo="ngModel" pKeyFilter="int" placeholder="Tamanho maximo" [(ngModel)]="atributo.tamanhoMaximo" [required]="false" pattern="^\d+$">
+      </div>
+     </div>
+    </div>
+   </form>
+   <div class="ui-dialog-buttonpane ui-helper-clearfix">
+    <button pButton icon="pi pi-check" (click)="salvar()" label="Salvar" [disabled]="!atributoForm.valid"></button>
+    <button pButton icon="pi pi-times" (click)="confirmarExcluir()" label="Excluir" class="ui-button-secondary" *ngIf="atributo.id"></button>
+   </div>
+   

@@ -1,0 +1,31 @@
+<p-table [value]="atributos" [paginator]="true" [rows]="10">
+    <ng-template pTemplate="header">
+     <tr>
+      <th>Id</th>
+      <th>Entidade</th>
+      <th>Nome</th>
+      <th>Rotulo</th>
+      <th>Coluna</th>
+      <th>Tipo</th>
+      <th>Obritatorio</th>
+      <th>Tamanho minimo</th>
+      <th>Tamanho maximo</th>
+      <th>&nbsp;</th>
+     </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-atributo>
+     <tr>
+      <td style="text-align: right;">{{atributo.id}}</td>
+      <td><a [routerLink]="['/entidade/entidade-add/', atributo.entidade.id]">{{atributo.entidade.nome}}</a></td>
+      <td>{{atributo.nome}}</td>
+      <td>{{atributo.rotulo}}</td>
+      <td>{{atributo.coluna}}</td>
+      <td>{{atributo.tipo}}</td>
+      <td style="text-align: center;">{{atributo.obritatorio?'Sim':'Não' }}</td>
+      <td style="text-align: right;">{{atributo.tamanhoMinimo}}</td>
+      <td style="text-align: right;">{{atributo.tamanhoMaximo}}</td>
+      <td><button pButton icon="pi pi-pencil" [routerLink]="['/atributo/atributo-add/', atributo.id]" title="Selecionar Atributo"></button></td>
+     </tr>
+    </ng-template>
+   </p-table>
+   

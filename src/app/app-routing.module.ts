@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'erro404', component: Erro404Component },
   { path: 'aplicacao', loadChildren: './aplicacao/aplicacao.module#AplicacaoModule'},
   { path: 'entidade', loadChildren: './entidade/entidade.module#EntidadeModule'},
+  { path: 'atributo', loadChildren: './atributo/atributo.module#AtributoModule'},
   { path: '', redirectTo: 'erro404', pathMatch: 'full'},
 ];
 
